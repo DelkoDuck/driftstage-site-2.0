@@ -18,6 +18,9 @@ $(document).ready ->
         e.preventDefault()
         $('#gif').removeClass 'hidden'
         $('#webm').addClass 'hidden'
+        $('#gif img').each ->
+            img = $(this).attr('data-src')
+            $(this).attr('src', img)
 
     $('#show-webms').click (e) ->
         e.preventDefault()
