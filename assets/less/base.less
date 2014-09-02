@@ -1,10 +1,5 @@
-body {
+body, html {
     height: 100%;
-}
-
-#content {
-    position: relative;
-    z-index: 10;
 }
 
 h1, h2, h3 {
@@ -26,12 +21,12 @@ h1, h2, h3 {
     }
 
     #near-bg {
-        z-index: 3;
+        z-index: 4;
         background-image: url(../img/sm-bg_near.png);
     }
 
     #far-bg {
-        z-index: 2;
+        z-index: 3;
         background-image: url(../img/sm-bg_far.png);
     }
 
@@ -40,14 +35,33 @@ h1, h2, h3 {
         background-image: url(../img/sm-bg.png);
     }
 
+    #page-header-logo {
+        z-index: 2;
+        background-image: url(../img/DS_Logo.png);
+        background-size: 75% auto;
+        background-position: center center;
+    }
+
     #blank-bg {
-        z-index: 4;
+        z-index: 5;
         background: @body-bg;
         top: 100%;
     }
 }
 
+#page-header {
+    height: 100%;
+
+    .container {
+        height: 100%;
+    }
+}
+
 #content {
+    position: relative;
+    z-index: 10;
+    height: 100%;
+
     .jumbotron img {
         border: 0px;
         .box-shadow(none);

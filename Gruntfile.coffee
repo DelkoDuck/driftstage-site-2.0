@@ -28,6 +28,15 @@ module.exports = (grunt) ->
                 ext: '.js'
                 dest: 'dist/assets/js/'
 
+        compress:
+            main:
+                options:
+                    mode: 'gzip'
+                expand: true,
+                cwd: 'dist/',
+                src: ['**/*'],
+                dest: 'dist-zipped/'
+
         less:
             main:
                 options:
@@ -96,10 +105,11 @@ module.exports = (grunt) ->
     grunt.loadNpmTasks 'grunt-contrib-coffee'
     grunt.loadNpmTasks 'grunt-contrib-less'
     grunt.loadNpmTasks 'grunt-contrib-watch'
+    grunt.loadNpmTasks 'grunt-contrib-compress'
 
 
     grunt.registerTask 'default', [
-        'clean:all', 'coffee', 'uglify', 'less', 'copy'
+        'clean:all', 'coffee', 'uglify', 'less', 'copy', 'compress'
     ]
 
     grunt.registerTask 'dev', [
