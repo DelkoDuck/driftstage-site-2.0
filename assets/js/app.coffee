@@ -6,6 +6,7 @@ $(document).ready ->
             horizontalScrolling: false
             verticalScrolling: true
             hideDistantElements: false
+            responsive: true
         })
 
     WebFont.load
