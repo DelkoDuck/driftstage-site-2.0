@@ -1,8 +1,8 @@
 
-tmp
-temp
-dist
-dist-zipped
+tmp/
+temp/
+dist/
+dist-zipped/
 
 assets/data/
 
@@ -14,7 +14,7 @@ assets/data/
 #########
 # Bower #
 #########
-vendor/bower
+vendor/
 
 ########
 # Node #
