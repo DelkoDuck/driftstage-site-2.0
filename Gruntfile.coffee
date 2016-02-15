@@ -10,16 +10,6 @@ module.exports = (grunt) ->
             js:
                 ['dist/assets/js/']
 
-        copy:
-            main:
-                files: [
-                    {
-                        src: ['index.html', 'greenlight.html', 'backer.html', 'assets/img/*', 'assets/img/**/*', 'assets/data/*']
-                        dest: 'dist/'
-                        expand: true
-                    }
-                ]
-
         coffee:
             main:
                 expand: true
@@ -28,21 +18,12 @@ module.exports = (grunt) ->
                 ext: '.js'
                 dest: 'dist/assets/js/'
 
-        compress:
-            main:
-                options:
-                    mode: 'gzip'
-                expand: true,
-                cwd: 'dist/',
-                src: ['**/*'],
-                dest: 'dist-zipped/'
-
         less:
             main:
                 options:
                     paths: ["assets/less"]
                 files:
-                    "dist/assets/css/style.min.css": "assets/less/app.less"
+                    "assets/css/style.min.css": "assets/less/app.less"
 
         uglify:
             main:
@@ -51,8 +32,10 @@ module.exports = (grunt) ->
                     # preserveComments: true
                     # mangle: false
                 files:
-                    'dist/assets/js/scripts.min.js': [
+                    'assets/js/scripts.min.js': [
                         'vendor/bower/jquery/dist/jquery.js'
+
+                        'vendor/bower/moment/min/moment.min.js'
 
                         'vendor/bower/jquery-rss/dist/jquery.rss.min.js'
 
@@ -111,9 +94,9 @@ module.exports = (grunt) ->
 
 
     grunt.registerTask 'default', [
-        'clean:all', 'coffee', 'uglify', 'less', 'copy', 'compress'
+        'clean:all', 'coffee', 'uglify', 'less'
     ]
 
     grunt.registerTask 'dev', [
-        'clean:all', 'coffee', 'uglify', 'less', 'copy', 'watch'
+        'clean:all', 'coffee', 'uglify', 'less', 'watch'
     ]
