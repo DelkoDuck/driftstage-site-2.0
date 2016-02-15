@@ -11,7 +11,7 @@ $(document).ready ->
 
     WebFont.load
         google:
-            families: ['Roboto:300,400,700,900']
+            families: ['Roboto Condensed:300,400,700']
         active: ->
             $('.slabbed').slabText()
 

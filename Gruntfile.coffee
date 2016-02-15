@@ -14,7 +14,7 @@ module.exports = (grunt) ->
             main:
                 files: [
                     {
-                        src: ['index.html', 'assets/img/*', 'assets/img/**/*', 'assets/data/*']
+                        src: ['index.html', 'greenlight.html', 'backer.html', 'assets/img/*', 'assets/img/**/*', 'assets/data/*']
                         dest: 'dist/'
                         expand: true
                     }
@@ -93,7 +93,7 @@ module.exports = (grunt) ->
                 files: ['assets/css/*', 'assets/less/*']
                 tasks: ['less']
             copy:
-                files: ['index.html', 'assets/img/*', 'assets/img/**/*', 'assets/font/*']
+                files: ['*.html', 'assets/img/*', 'assets/img/**/*', 'assets/font/*']
                 tasks: ['copy']
             uglify:
                 files: ['assets/js/*']
