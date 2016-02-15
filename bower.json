@@ -18,6 +18,9 @@
   "dependencies": {
     "bootstrap": "~3.2.0",
     "stellar": "~0.6.2",
-    "slabText": "~2.2.0"
+    "slabText": "~2.2.0",
+    "jquery-rss": "^3.2.1"
+  },
+  "devDependencies": {
   }
 }

@@ -54,6 +54,8 @@ module.exports = (grunt) ->
                     'dist/assets/js/scripts.min.js': [
                         'vendor/bower/jquery/dist/jquery.js'
 
+                        'vendor/bower/jquery-rss/dist/jquery.rss.min.js'
+
                         'vendor/bower/bootstrap/js/transition.js'
                         'vendor/bower/bootstrap/js/alert.js'
                         'vendor/bower/bootstrap/js/button.js'
