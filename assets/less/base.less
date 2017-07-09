@@ -3,14 +3,21 @@ body, html {
     font-weight: 300;
 }
 
-h1, h2, h3 {
-    background: #ee2364; text-shadow: none; padding: 5px 5px 5px 15px;
+h1, h2, h3, h4 {
+    color: #ee2364;
+    font-family: "TargaMS", "Roboto Condensed", Helvetica, Arial, sans-serif;
     text-transform: uppercase;
+    
 
-    &.nobg
+    &.bg
     {
-        background: none;
+        background: #ee2364; text-shadow: none; padding: 5px 5px 5px 15px;
+        color: #FFFFFF;
     }
+}
+
+hr {
+    border-top: 5px solid #FFFFFF;
 }
 
 #backgrounds {
@@ -105,6 +112,65 @@ h1, h2, h3 {
     }
 }
 
+#about {
+    text-align: center;
+    margin: auto;
+
+    h3 {
+        font-size: 43px;
+        margin-top: 1em;
+    }
+    h4 {
+        font-size: 38px;
+    }
+}
+
+#about-header {
+    display: inline-block;
+    background-image: url("../img/about.png"); 
+    /* size: 340 * 106 */
+    /* preferred width: 300 */
+    .responsive-landscape-image(340, 106, 300);
+    margin-top: 4em;
+}
+
+.about-descript {
+    font-family: "Helvetica Neue" , sans-serif;
+    font-weight: lighter;
+    font-size: 135%;
+
+    h5 {
+        font-size: 140%;
+        font-style: italic;
+        font-weight: normal;
+    }
+}
+
+#platforms {
+    display: inline-block;
+    background-image: url("../img/platforms.png"); 
+    /* size: 754 * 124 */
+    /* preferred width: 500 */
+    .responsive-landscape-image(754, 124, 500);
+    margin: 1em;
+}
+
+#price {
+    display: inline-block;
+    border-bottom: 10px solid #ee2364;
+    font-family: "TargaMS", "Roboto Condensed", Helvetica, Arial, sans-serif;
+    font-weight:  100;
+    font-size: 700%;
+    line-height: 113%;
+}
+
+#keys {
+    background-image: url("../img/DS_GIF_Key.gif"); 
+    margin: auto;
+    /* size: 371 * 523 */
+    .responsive-landscape-image(371, 523, 371);
+}
+
 #content {
     position: relative;
     z-index: 10;
@@ -155,4 +221,19 @@ video {
 
 .row-buffer {
     margin-top: 15px;
+}
+
+
+.responsive-landscape-image(@img-width, @img-height, @max-width) { 
+    background-size: contain; 
+    background-repeat: no-repeat; 
+    width: 100%;
+    max-width: unit(@max-width, px);
+    height: 0; 
+    padding-top: percentage(@img-height/@img-width);
+
+    @media screen and (min-width: (unit(@max-width, px) + 100px ) ) {
+        width: unit(@max-width, px);
+        padding-top: unit( @img-height/@img-width*@max-width , px);
+    }
 }
