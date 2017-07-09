@@ -1,11 +1,15 @@
 body, html {
+    font-family: @font-family-base;
     height: 100%;
-    font-weight: 300;
+}
+
+p {
+    font-weight: 100;
 }
 
 h1, h2, h3, h4 {
     color: #ee2364;
-    font-family: "TargaMS", "Roboto Condensed", Helvetica, Arial, sans-serif;
+    font-family: @font-family-header-ms;
     text-transform: uppercase;
     
 
@@ -132,10 +136,11 @@ hr {
     /* preferred width: 300 */
     .responsive-landscape-image(340, 106, 300);
     margin-top: 4em;
+    width: 75%;
 }
 
 .about-descript {
-    font-family: "Helvetica Neue" , sans-serif;
+    font-family: @font-family-sans-serif;
     font-weight: lighter;
     font-size: 135%;
 
@@ -151,17 +156,21 @@ hr {
     background-image: url("../img/platforms.png"); 
     /* size: 754 * 124 */
     /* preferred width: 500 */
-    .responsive-landscape-image(754, 124, 500);
-    margin: 1em;
+    .landscape-image(754, 124, 500);
+    width: 80%;
 }
 
 #price {
     display: inline-block;
     border-bottom: 10px solid #ee2364;
-    font-family: "TargaMS", "Roboto Condensed", Helvetica, Arial, sans-serif;
+    font-family: @font-family-header-ms;
     font-weight:  100;
     font-size: 700%;
     line-height: 113%;
+
+    @media screen and (max-width: 420px ) {
+        font-size: 400%;
+    }
 }
 
 #keys {
@@ -219,10 +228,40 @@ video {
     height: 100%;
 }
 
+footer {
+    text-align: center;
+}
+
+.copyright {
+    color: #CCCCCC;
+    font-style: italic;
+    font-size: smaller;
+    margin: 1em;
+}
+
+.logo {
+    display: inline-block;
+    background-image: url('../img/super_systems_color.png');
+    /* size: 271 * 54 */
+    background-size: contain; 
+    background-repeat: no-repeat; 
+    .responsive-landscape-image(271, 54, 200);
+}
+
+
 .row-buffer {
     margin-top: 15px;
 }
 
+
+.landscape-image(@img-width, @img-height, @max-width) { 
+    background-size: contain; 
+    background-repeat: no-repeat; 
+    width: 100%;
+    max-width: unit(@max-width, px);
+    height: 0; 
+    padding-top: percentage(@img-height/@img-width);
+}
 
 .responsive-landscape-image(@img-width, @img-height, @max-width) { 
     background-size: contain; 
@@ -234,6 +273,7 @@ video {
 
     @media screen and (min-width: (unit(@max-width, px) + 100px ) ) {
         width: unit(@max-width, px);
+        max-width: 100%;
         padding-top: unit( @img-height/@img-width*@max-width , px);
     }
 }
